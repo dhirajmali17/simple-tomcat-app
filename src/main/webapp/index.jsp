@@ -2,99 +2,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Jenkins Tomcat CI/CD</title>
+<meta charset="UTF-8">
+<title>Jenkins Tomcat CI/CD</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Courier New", monospace;
-            background: #0f172a;
-            color: #e5e7eb;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #e0f2fe, #ede9fe);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        .terminal {
-            background: #020617;
-            border-radius: 10px;
-            width: 600px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8);
-            overflow: hidden;
-        }
+    .card {
+        background: white;
+        width: 480px;
+        padding: 40px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        animation: fadeIn 0.8s ease;
+    }
 
-        .terminal-header {
-            background: #1e293b;
-            padding: 12px;
-            display: flex;
-            gap: 8px;
-        }
+    .icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+        color: #2563eb;
+    }
 
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
+    h1 {
+        margin: 10px 0;
+        color: #1e3a8a;
+        font-size: 26px;
+    }
 
-        .red { background: #ef4444; }
-        .yellow { background: #facc15; }
-        .green { background: #22c55e; }
+    p {
+        color: #475569;
+        margin: 10px 0 20px;
+        font-size: 16px;
+    }
 
-        .terminal-body {
-            padding: 25px;
-        }
+    .badge {
+        display: inline-block;
+        background: #dcfce7;
+        color: #15803d;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
 
-        .line {
-            margin: 8px 0;
-        }
+    .stack {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #64748b;
+    }
 
-        .prompt {
-            color: #22c55e;
-        }
-
-        .command {
-            color: #38bdf8;
-        }
-
-        .success {
-            color: #4ade80;
-            font-weight: bold;
-        }
-
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-    </style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 </head>
 
 <body>
-    <div class="terminal">
-        <div class="terminal-header">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-        </div>
 
-        <div class="terminal-body">
-            <div class="line">
-                <span class="prompt">jenkins@pipeline</span>:<span class="command">~$</span> deploy app
-            </div>
-            <div class="line success">✔ Build Successful</div>
-            <div class="line success">✔ WAR deployed to Tomcat</div>
-            <div class="line success">✔ Application is live</div>
+<div class="card">
+    <div class="icon">☁️</div>
 
-            <div class="line">
-                🚀 Hello from Apache Tomcat
-            </div>
+    <h1>Application Deployed Successfully</h1>
 
-            <div class="footer">
-                Jenkins → Maven → Tomcat | CI/CD Pipeline
-            </div>
-        </div>
+    <p>Hello from Apache Tomcat 🚀</p>
+
+    <div class="badge">CI/CD Pipeline Success</div>
+
+    <div class="stack">
+        Jenkins → Maven → Tomcat
     </div>
+</div>
+
 </body>
 </html>
